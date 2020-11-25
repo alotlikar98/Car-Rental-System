@@ -29,5 +29,3 @@ Backend: PHP
 
 Database: MySql
 
-# UML DIAGRAM
-![UML][/CRSuercasediag.png]
