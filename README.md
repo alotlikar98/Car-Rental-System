@@ -24,5 +24,7 @@ The main objective of the application car Rental System require a temporary vehi
 
 # LANGUAGE
 Frontend: HTML,CSS & BOOTSTRAP,JAVASCRIPT
+
 Backend: PHP
+
 Database: MySql
