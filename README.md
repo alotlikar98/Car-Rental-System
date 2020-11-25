@@ -28,3 +28,6 @@ Frontend: HTML,CSS & BOOTSTRAP,JAVASCRIPT
 Backend: PHP
 
 Database: MySql
+
+# UML DIAGRAM
+![UML][/CRSuercasediag.png]
