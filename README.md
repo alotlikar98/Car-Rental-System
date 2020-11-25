@@ -23,7 +23,7 @@ The main objective of the application car Rental System require a temporary vehi
 5) Logout
 
 # LANGUAGE
-Frontend: HTML,CSS & BOOTSTRAP,JAVASCRIPT
+Frontend: HTML,CSS,JAVASCRIPT
 
 Backend: PHP
 
