@@ -14,13 +14,16 @@ The main objective of the application car Rental System require a temporary vehi
 2) Admin can Add New vehicle Details
 3) Admin can Manage Vehicle Details(Edit ,Delete)
 4) Admin can view User Login Record 
-5) Logout
+5) Admin can view contact us query
+6) Logout
 
 # User
 1) New User can Register through Registration page
 2) Registered User can login with valid email and password
 3) User can find car details and Booked car
-4) Logout
+4) User can view his/her profile
+5) User and non user can access contact us form
+6) Logout
 
 # LANGUAGE
 Frontend: HTML,CSS,JAVASCRIPT
