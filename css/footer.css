@@ -1,0 +1,16 @@
+
+.text-footer{
+    text-align: center;
+    padding: 30px 0;
+   font-family: 'Ubuntu', sans-serif; 
+   display: flex;
+   justify-content: center;
+   color: white;
+   
+}
+
+.background{
+    background: rgba(0, 0, 0, 0.7) url('../image/carimg.jpg');
+    background-size: cover;
+    background-blend-mode: darken;
+}
