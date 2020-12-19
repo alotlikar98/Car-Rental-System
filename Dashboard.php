@@ -30,7 +30,7 @@ width: 50%;
             <div class="logo"><img src="icon_logo/logo.jpg" alt="logo"></div>
             <li><a href="#Home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li><a href="#CarList">Car List</a></li>
           
         </ul>
@@ -85,7 +85,7 @@ width: 50%;
   
    
    $db = mysqli_select_db($conn, 'carrental');
-    $querry= 'SELECT * FROM addcar';
+    $querry= "SELECT * FROM addcar";
     $querry_run=mysqli_query($conn,$querry);
     $check_car=mysqli_num_rows($querry_run)>0;
 
@@ -108,7 +108,7 @@ width: 50%;
     <p class="card-text"> <b>Seating Cap:</b><?php echo $row['seating']; ?> </p>
     <p class="card-text"> <b>Price: </b><?php echo $row['price']; ?> </p>
     </center>
-    <center><a href="Booking.php?Book= <?php echo $row['c_id'];?> "> <input type="button" class=" btn-primary" value="Rent" ></a></center>
+    <center><a href="Booking.php?id= <?php echo $row['c_id'];?> "> <input type="button" class=" btn-primary" value="Rent" ></a></center>
 
     </div>
     </div>
@@ -127,22 +127,15 @@ width: 50%;
     </div>
     </section>
 
+
+
     <section class="contact" id="contact">
-        <h1 class="text-center"> <b> Contact Us</b></h1>
+        <h1 class="text-center"> <b> Message To Admin</b></h1>
         <form method="post" action="" >
-        <div class="form-group text-center" >
-          <label for="name">Name</label>
-        <center> <input type="text" class="form-control text-center mb-3" placeholder="Enter your name" name="cname" required="required"> </center> 
-        </div>
-        <div class="form-group text-center" >
-        <label for="email">Email</label>
-         <center> <input type="text" class="form-control text-center" placeholder="Enter your email" name="cemail"required="required" > </center>
-        </div>
-        <div class="form-group text-center" >
     
         <div class="form-group text-center" >
         <label for="descrip">Message</label>
-        <center>  <textarea class="form-control text-center" name="cdescrip" rows="3" placeholder="Enter your message"></textarea> </center>
+        <center>  <textarea class="form-control text-center" name="descrip" rows="7" placeholder="Enter your message"></textarea> </center>
         </div>
          
            <center> <input type="submit" class="btn btn-success px-3 mt-4" name="submit" value="contact"></center>
@@ -167,22 +160,16 @@ width: 50%;
 
 <?php
 if(isset($_POST['submit'])){
-    $name=$_POST['cname'];
-    $email=$_POST['cemail'];
-    $description=$_POST['cdescrip'];
+    
+    $description=$_POST['descrip'];
 
-    if((!isset($name)) ||(empty($name)) ){
-        $name='cname';
-      }
-    if((!isset($email)) ||(empty($email)) ){
-        $email='cemail';
-      }
+   
     if((!isset($description)) ||(empty($description)) ){
-        $description='cdescrip';
+        $description='descrip';
       }
       $conn=mysqli_connect('localhost','root','','carrental');
 
-      $sql="insert into contactus (cname,cemail,cdescrip) values('$name','$email','$description')";
+      $sql="insert into message (descrip) values('$description')";
       $run=mysqli_query($conn,$sql);
 
       if($run){

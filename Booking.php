@@ -1,6 +1,10 @@
 <?php
 session_start();
-error_reporting(0);
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+  header("location: Login.php");
+  exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -114,6 +118,7 @@ if(isset($_POST['book'])){
     echo "<script language='javascript'>"; 
     echo "alert('Your Book has been done sucessfully please check your email id')";
     echo "</script>"; 
+    header('Location: Dashboard.php');
     } 
     else{
       echo "<script language='javascript'>";

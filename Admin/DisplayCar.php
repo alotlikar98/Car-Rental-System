@@ -19,15 +19,15 @@ session_start();
 
 <!--    Display Car Details      -->
 <section class="main-form">
-<h2 class="text-center text-danger pt-3 font-weight-bold">Car Rental System</h2>
-<div class="container bg-danger" id="formsetting">
-<h3 class="text-center text-white pb-4 pt-2 font-weight-bold">View Car Details</h3>
+<h2 class="text-center text-dark pb-3 font-weight-bold">Car Rental System</h2>
+<div class="container " id="formsetting">
+<h3 class="text-center text-dark pb-4 pt-2 font-weight-bold">View Car Details</h3>
 
 
 <div class="row">
     
     <div class="col-md-12 col-sm-12 col-12">
-        <table class="table table-bordered table-white ">
+        <table class="table table-bordered  ">
         <thead>
         <tr>
         <th>Sno</th>
@@ -56,12 +56,12 @@ session_start();
 
         <tbody>
         <tr>
-        <td class="text-white"> <?php echo $i++;     ?></td>
-        <td class="text-white"> <?php echo $row['carname'];  ?></td>
-        <td class="text-white"><?php echo $row['model'];  ?></td>
-        <td class="text-white"><?php echo $row['fueltype'];  ?></td>
-        <td class="text-white"><?php echo $row['seating'];  ?></td>
-        <td class="text-white"><?php echo $row['price'];  ?></td>
+        <td class="text-dark font-weight-bold"> <?php echo $i++;     ?></td>
+        <td class="text-dark font-weight-bold"> <?php echo $row['carname'];  ?></td>
+        <td class="text-dark font-weight-bold"><?php echo $row['model'];  ?></td>
+        <td class="text-dark font-weight-bold"><?php echo $row['fueltype'];  ?></td>
+        <td class="text-dark font-weight-bold"><?php echo $row['seating'];  ?></td>
+        <td class="text-dark font-weight-bold"><?php echo $row['price'];  ?></td>
         <td>
         <a href="carimg/ <?php echo $row['images']; ?>">
         <img src="<?php echo $row['images'];  ?>" width="70" height="50">
@@ -70,8 +70,8 @@ session_start();
         
         </td>
         <td>
-        <a href="edit_car.php?edit_car=<?php echo $row['c_id']; ?>">Edit</a>
-        <a href="delete_car.php?delete_car=<?php echo $row['c_id']; ?>">Delete</a>
+        
+        <a href="delete_car.php?delete_car=<?php echo $row['c_id']; ?>"> <img src="../icon_logo/close.png" style="width:20px; height: 20px;"  > </a>
         </td>
         
         </tr>

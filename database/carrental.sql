@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2020 at 01:55 PM
+-- Generation Time: Dec 19, 2020 at 02:40 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -34,21 +34,22 @@ CREATE TABLE `addcar` (
   `fueltype` varchar(100) NOT NULL,
   `seating` int(100) NOT NULL,
   `price` int(100) NOT NULL,
-  `images` varchar(255) NOT NULL
+  `images` varchar(255) NOT NULL,
+  `reg_id` int(100) NOT NULL,
+  `ci_id` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `addcar`
 --
 
-INSERT INTO `addcar` (`c_id`, `carname`, `model`, `fueltype`, `seating`, `price`, `images`) VALUES
-(1, 'maruti-Suzuki', 'Delta', 'diesel', 5, 12000, 'carimg/maruti-suzuki-delta.jpg'),
-(2, 'Kia-Motors', 'Sonet-HTE', 'diesel', 5, 11000, 'carimg/kia-sonet.jpg'),
-(3, 'Maruti-Suzuki', 'Baleno', 'petrol', 5, 15000, 'carimg/MS-Baleno-Alpha.jpg'),
-(14, 'Hyundai', 'i20', 'petrol', 4, 8000, 'carimg/hyundai-i20-cover-thumbnail.jpg'),
-(15, 'kia-motors', 'seltos', 'diesel', 5, 10000, 'carimg/kia-seltos.jpg'),
-(16, 'Tata-Motors', 'Nexon', 'petrol', 5, 8000, 'carimg/tata-nexan.jpg'),
-(17, 'Mahindra', 'Tar', 'petrol', 4, 9000, 'carimg/mahindra-tar.jpg');
+INSERT INTO `addcar` (`c_id`, `carname`, `model`, `fueltype`, `seating`, `price`, `images`, `reg_id`, `ci_id`) VALUES
+(1, 'maruti-Suzuki', 'Delta', 'diesel', 5, 12000, 'carimg/maruti-suzuki-delta.jpg', 11, 1),
+(2, 'Kia-Motors', 'Sonet-HTE', 'diesel', 5, 11000, 'carimg/kia-sonet.jpg', 0, 0),
+(3, 'Maruti-Suzuki', 'Baleno', 'petrol', 5, 15000, 'carimg/MS-Baleno-Alpha.jpg', 0, 0),
+(4, 'Hyundai', 'i20', 'petrol', 4, 8000, 'carimg/hyundai-i20-cover-thumbnail.jpg', 0, 0),
+(5, 'kia-motors', 'seltos', 'diesel', 5, 10000, 'carimg/kia-seltos.jpg', 0, 0),
+(6, 'Tata-Motors', 'Nexon', 'petrol', 5, 8000, 'carimg/tata-nexan.jpg', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -99,6 +100,25 @@ INSERT INTO `contactus` (`cu_id`, `cname`, `cemail`, `cdescrip`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `message`
+--
+
+CREATE TABLE `message` (
+  `m_id` int(200) NOT NULL,
+  `descrip` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`m_id`, `descrip`) VALUES
+(1, 'safafw wreriwerier ereireireiri e '),
+(2, 'hi admin how are you');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `registers`
 --
 
@@ -109,17 +129,17 @@ CREATE TABLE `registers` (
   `email` varchar(200) NOT NULL,
   `contact` varchar(100) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `cpassword` varchar(200) NOT NULL
+  `cpassword` varchar(200) NOT NULL,
+  `m_id` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `registers`
 --
 
-INSERT INTO `registers` (`id`, `fname`, `username`, `email`, `contact`, `password`, `cpassword`) VALUES
-(9, 'abcd', ' abcds', 'xyz@gmail.com', '+912344563829', '123456', '123456'),
-(10, 'anket', 'ready', 'test@gmail.com', '+912344563829', '12345', '12345'),
-(11, 'aniket', 'aniket124', 'qwerty@yahoo.com', '+912344565457', '123456', '123456');
+INSERT INTO `registers` (`id`, `fname`, `username`, `email`, `contact`, `password`, `cpassword`, `m_id`) VALUES
+(11, 'aniket', 'aniket124', 'qwerty@yahoo.com', '+912344565457', '123456', '123456', 1),
+(13, 'newuser', 'newuser12', 'user@gmail.com', '+9123445454', '123456', '123456', 2);
 
 -- --------------------------------------------------------
 
@@ -139,9 +159,9 @@ CREATE TABLE `rentcar` (
 --
 
 INSERT INTO `rentcar` (`r_id`, `fromdate`, `tilldate`, `payment`) VALUES
-(6, '2020-12-18', '2020-12-20', 'cash'),
-(7, '2020-12-21', '2020-12-24', 'cash'),
-(8, '2020-12-23', '2020-12-25', 'cash');
+(1, '2020-12-21', '2020-12-24', 'cash'),
+(2, '2020-12-23', '2020-12-25', 'cash'),
+(3, '2020-12-19', '2020-12-21', 'cash');
 
 --
 -- Indexes for dumped tables
@@ -166,6 +186,12 @@ ALTER TABLE `contactus`
   ADD PRIMARY KEY (`cu_id`);
 
 --
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`m_id`);
+
+--
 -- Indexes for table `registers`
 --
 ALTER TABLE `registers`
@@ -185,7 +211,7 @@ ALTER TABLE `rentcar`
 -- AUTO_INCREMENT for table `addcar`
 --
 ALTER TABLE `addcar`
-  MODIFY `c_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `c_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -200,16 +226,22 @@ ALTER TABLE `contactus`
   MODIFY `cu_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `m_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `registers`
 --
 ALTER TABLE `registers`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `rentcar`
 --
 ALTER TABLE `rentcar`
-  MODIFY `r_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `r_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

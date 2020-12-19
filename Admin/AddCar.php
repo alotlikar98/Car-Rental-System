@@ -49,9 +49,9 @@ body{
 <?php include 'slide.php'; ?>
 
   <section class="main-form">
-<h2 class="text-center text-danger pt-1 font-weight-bold">Car Rental System</h2>
-<div class="container bg-danger" id="formsetting">
-<h3 class="text-center text-white pb-4 pt-2 font-weight-bold">Add Car Details</h3>
+<h2 class="text-center pb-3 font-weight-bold">Car Rental System</h2>
+<div class="container " id="formsetting">
+<h3 class="text-center text-dark pb-4 pt-2 font-weight-bold">Add Car Details</h3>
 
       <!--    Adding Car Details      -->
       <form method="post" action="AddCar.php" enctype="multipart/form-data">
@@ -91,7 +91,7 @@ body{
 
           <div class="form-group">
            
-            <input type="submit" class="btn btn-success px-5 mt-4" name="add" value="Add Details">
+            <input type="submit" class="btn btn-success px-3 mt-4" name="add" value="Add Details">
             
           </div>
 

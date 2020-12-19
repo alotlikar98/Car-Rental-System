@@ -86,27 +86,7 @@
 }
     
  
-//  if(isset($_POST['Login'])){
-//      $username=$_POST['username'] ;
-//      $password=$_POST['password'];
 
-   
-//      $sql="select * from registers where username='$username' and password = '$password'";
-//      $run=mysqli_query($conn,$sql);
-//      $row=mysqli_num_rows($run);
-//      if($row == 1){
-//         session_start();
-//         $_SESSION['username']=$username;
-//          header("location: Dashboard.php");
-       
-       
-//      }
-//      else{
-//          echo "<script> window.open('Login.php?error=login failed ' ,'_self') </script>";
-//      }
-   
-
-//   }
 
 
 

@@ -27,7 +27,11 @@ margin-bottom:20px;
         <br>
         <a href="DisplayCar.php">Display Car</a>
         <br>
-        <a href="Contactus.php">ContactUs Querry</a>
+        <a href="Contactus.php">Contact Us(Guest)</a>
+       <br>
+       <a href="message.php">Contact Us(User)</a>
+       <br>
+       <a href="manage_booking.php">Manage Booking</a>
        <br>
         <a href="Logout.php">Log Out</a>
       </div>
